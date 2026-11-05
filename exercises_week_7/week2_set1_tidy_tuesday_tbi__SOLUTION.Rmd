@@ -105,6 +105,9 @@ totals_table <- tbi_age |>
   select(-age_group) |>
   arrange(injury_mechanism)
 
+totals_table 
+
+
 write_tsv(totals_table, file = here("tables", "totals_table.tsv"))
 write_csv(totals_table, file = here("tables", "totals_table.csv"))
 
@@ -125,6 +128,7 @@ oldest_hosp_plot <- tbi_age |>
   ggtitle("Plot showing hospitalisation numbers for each injury mechanism (Age Group: 75+)") +
   xlab("Injury Mechanism") +
   ylab("Estimated Number")
+
 
 # Save the chart
 ggsave(filename = "plots/oldest_hosp_plot.png", plot = oldest_hosp_plot)
